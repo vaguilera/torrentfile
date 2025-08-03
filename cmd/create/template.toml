@@ -1,0 +1,27 @@
+# tracker main url
+announce = "http://tracker.url.com"
+# extra trackers (optional)
+# remember that they group of tiers, and every tier can have several urls
+announcelist = [
+    ["http://tracker2.url.com"],
+    ["http://tracker3.url.com", "http://tracker3.url.com"]
+]
+
+# encoding (optional)
+encoding = "UTF8"
+
+# Torrent comment
+comment = "This is a comment"
+
+# Url list (optional)
+# List of direct download urls
+urllist = [ "http://url1.com", "http://url2.com" ]
+
+# Is the torrent private?
+private = true
+
+# piece size in Kb
+piecesize = 32
+
+# calculate MD5 per file
+md5 = false
