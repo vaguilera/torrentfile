@@ -38,7 +38,7 @@ func main() {
 }
 
 func showTorrentInfo(file string, verbose bool) error {
-	torrent, err := torrentfile.LoadTorrentFile(file)
+	torrent, err := torrentfile.Open(file)
 	if err != nil {
 		return err
 	}

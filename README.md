@@ -1,5 +1,5 @@
 # Torrentfile
-Library for managing Torrent files
+Library for managing Torrent files and magnet links
 
 ### Parse and create torrent files
 
@@ -45,3 +45,25 @@ type TConfig struct {
 ```
 
 Piece Size is 32Kb by default. Some trackers will need some specific setting here depending on the size of the torrent.file
+
+## Magnet Links
+
+Library allows to create and read Magnet links
+
+```go
+    func ParseMagnetURI(uri string) (*MagnetLink, error) // Returns a struct with the parsed Magnet Link
+    func NewMagnetURI(magnet *MagnetLink) string // Returns a string with the generted Magnet URI
+```
+
+Fields supported by the library:
+
+- xt (Exact Topic)
+- dn (Display Name)
+- tr (Address Tracker)
+- xl (Exact Length)
+- kt (Keyword Topic)
+- as (Acceptable Sources)
+- xs (Exact Sources)
+- mt (Manifest Topic)
+
+Note: Most of the BitTorrent clients accept only a single "mt" field. But as this is not strictly defined I decided to allow multiple manifest topics. If you just want to support 1 read the first element of the array
